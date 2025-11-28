@@ -24,7 +24,7 @@ center_window(root)
 notebook = ttk.Notebook(root)
 notebook.pack(fill="both", expand=True, padx=10, pady=10)
 
-# ---------- Helper: tạo table trong tab ----------
+# Helper: tạo table trong tab
 def make_table(parent, columns, headings, height=12):
     frame = tk.Frame(parent)
     frame.pack(fill="both", expand=True)
@@ -308,7 +308,7 @@ tree_tx.bind("<<TreeviewSelect>>", on_tx_select)
 
 #  TAB 4: CHUYẾN XE 
 tab_chuyen = ttk.Frame(notebook)
-notebook.add(tab_chuyen, text="Chuyến Xe")
+#notebook.add(tab_chuyen, text="Chuyến Xe")
 
 frm_chuyen_form = tk.Frame(tab_chuyen)
 frm_chuyen_form.pack(fill="x", pady=8)
