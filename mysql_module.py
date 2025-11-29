@@ -2,12 +2,12 @@
 import mysql.connector
 from mysql.connector import Error
 
-# ======= CẤU HÌNH MYSQL (sửa theo máy bạn) =========
+# CẤU HÌNH MYSQL  
 MYSQL_HOST = "localhost"
 MYSQL_USER = "root"
-MYSQL_PASS = "123456"        # sửa mật khẩu nếu có
+MYSQL_PASS = "123456"        
 MYSQL_DB   = "quanly_tuyenxe"
-# =====================================================
+
 
 def connect_server():
     return mysql.connector.connect(
@@ -25,7 +25,7 @@ def connect_db():
     )
 
 def init_database():
-    # Tạo database + bảng nếu chưa có
+    # Tạo database + bảng 
     conn = connect_server()
     cursor = conn.cursor()
     cursor.execute(f"CREATE DATABASE IF NOT EXISTS {MYSQL_DB}")
@@ -85,7 +85,7 @@ def init_database():
     conn.close()
 
 
-# ------------------ TUYEN_XE CRUD ------------------
+# TUYEN_XE CRUD
 def get_all_tuyen():
     conn = connect_db()
     cur = conn.cursor()
@@ -127,7 +127,7 @@ def search_tuyen_by_ma(ma_tuyen):
     conn.close()
     return row
 
-# ------------------ XE CRUD ------------------
+# XE CRUD 
 def get_all_xe():
     conn = connect_db()
     cur = conn.cursor()
@@ -159,7 +159,7 @@ def delete_xe(ma_xe):
     conn.commit()
     conn.close()
 
-# ------------------ TAI_XE CRUD ------------------
+# TAI_XE CRUD 
 def get_all_taixe():
     conn = connect_db()
     cur = conn.cursor()
@@ -191,7 +191,7 @@ def delete_taixe(ma_tai_xe):
     conn.commit()
     conn.close()
 
-# ------------------ CHUYEN_XE CRUD ------------------
+# CHUYEN_XE CRUD 
 def get_all_chuyen():
     conn = connect_db()
     cur = conn.cursor()
@@ -225,7 +225,7 @@ def delete_chuyen(ma_chuyen):
     conn.commit()
     conn.close()
 
-# ------------------ HỖ TRỢ CHO GIAO DIỆN ------------------
+# HỖ TRỢ CHO GIAO DIỆN
 def fetch_tuyen_for_combobox():
     rows = get_all_tuyen()
     return [(r[0], r[1]) for r in rows]   # (ma_tuyen, ten_tuyen)
@@ -257,7 +257,7 @@ def fetch_chuyen_with_details():
     conn.close()
     return rows
 
-# init when imported
+# init main
 if __name__ == "__main__":
     init_database()
     print("Database init done.")
