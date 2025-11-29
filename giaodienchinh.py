@@ -308,7 +308,7 @@ tree_tx.bind("<<TreeviewSelect>>", on_tx_select)
 
 #  TAB 4: CHUYẾN XE 
 tab_chuyen = ttk.Frame(notebook)
-#notebook.add(tab_chuyen, text="Chuyến Xe")
+notebook.add(tab_chuyen, text="Chuyến Xe")
 
 frm_chuyen_form = tk.Frame(tab_chuyen)
 frm_chuyen_form.pack(fill="x", pady=8)
